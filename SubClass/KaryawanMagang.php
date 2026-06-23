@@ -9,7 +9,7 @@ class KaryawanMagang extends Karyawan
 
     public function hitungGajiBersih()
     {
-        return 0;
+        return ($this->hariKerjaMasuk * $this->gajiDasarPerHari) * 0.80;
     }
 
     public function tampilkanProfilKaryawan()
@@ -19,7 +19,7 @@ class KaryawanMagang extends Karyawan
 
     public static function getDataKaryawanMagang($koneksi)
     {
-        $query = "SELECT * FROM tabel_karyawan 
+        $query = "SELECT * FROM tabel_karyawan
                   WHERE jenis_karyawan = 'Magang'";
 
         return mysqli_query($koneksi, $query);

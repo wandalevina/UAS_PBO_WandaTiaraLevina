@@ -9,7 +9,7 @@ class KaryawanKontrak extends Karyawan
 
     public function hitungGajiBersih()
     {
-        return 0;
+        return $this->hariKerjaMasuk * $this->gajiDasarPerHari;
     }
 
     public function tampilkanProfilKaryawan()
@@ -19,7 +19,7 @@ class KaryawanKontrak extends Karyawan
 
     public static function getDataKaryawanKontrak($koneksi)
     {
-        $query = "SELECT * FROM tabel_karyawan 
+        $query = "SELECT * FROM tabel_karyawan
                   WHERE jenis_karyawan = 'Kontrak'";
 
         return mysqli_query($koneksi, $query);
